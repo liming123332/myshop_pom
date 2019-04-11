@@ -28,10 +28,11 @@ dubbo:
   application:
     name: shop_service_goods
   registry:
-    address: zookeeper://192.168.126.22:2181
+    address: zookeeper://192.168.126.129:2181
   protocol:
     port: 20880
-
+  consumer:
+    check: false
 server:
   port: 9090
 

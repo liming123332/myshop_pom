@@ -1,5 +1,7 @@
 package com.myshop.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +16,8 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName("goods")
 public class Good implements Serializable {
+
+    @TableId(type = IdType.AUTO)
     private int id;
     private String gname;
     private BigDecimal gprice;
@@ -21,7 +25,7 @@ public class Good implements Serializable {
     private String ginfo;//商品详情
     private String gimage;//图片
     private int status;//商品状态
-    private Date createtime;
+    private Date createtime=new Date();
     private int tid;//商品类别对应的id
 
 }

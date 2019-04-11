@@ -1,8 +1,10 @@
 package com.myshop.shop_service_goods.serviceImpl;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.myshop.entity.Good;
 import com.myshop.service.IGoodService;
+import com.myshop.service.ISearchService;
 import com.myshop.shop_service_goods.dao.GoodMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -13,6 +15,9 @@ public class GoodServiceImpl implements IGoodService {
     @Autowired
     private GoodMapper goodMapper;
 
+    @Reference
+    private ISearchService searchService;
+
     @Override
     public List<Good> queryAll() {
         return goodMapper.selectList(null);
@@ -21,5 +26,6 @@ public class GoodServiceImpl implements IGoodService {
     @Override
     public void insert(Good good) {
         goodMapper.insert(good);
+        searchService.insertSolr(good);
     }
 }

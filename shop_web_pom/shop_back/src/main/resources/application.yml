@@ -5,14 +5,26 @@ spring:
     multipart:
       max-file-size: -1
       max-request-size: -1
+
 dubbo:
   application:
     name: shop_back
   registry:
-    address: zookeeper://192.168.126.22:2181
-  protocol:
-    port: 20881
+    address: zookeeper://192.168.126.129:2181
   consumer:
     check: false
+
 server:
   port: 8080
+
+tracker:
+  port: 192.168.126.4
+
+fdfs:
+  pool:
+    jmx-enabled: false
+  thumb-image:
+    width: 160
+    height: 130
+  tracker-list:
+    - ${tracker.port}:22122

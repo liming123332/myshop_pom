@@ -1,0 +1,14 @@
+server:
+  port: 9091
+
+dubbo:
+  application:
+    name: search_service
+  registry:
+    address: zookeeper://192.168.126.129:2181
+  protocol:
+    port: 20881
+spring:
+  data:
+    solr:
+      host: http://192.168.126.4:8983/solr/ik_core

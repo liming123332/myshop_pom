@@ -44,7 +44,7 @@
                         <td><input type="checkbox" /></td>
                         <td th:text="${good.gname}">Lorem ipsum dolor</td>
                         <td th:text="${good.gprice}"><a href="#" title="title">Sit amet</a></td>
-                        <td th:text="${good.gimage}">Consectetur adipiscing</td>
+                        <td ><img style="width: 140px;height: 120px;" th:src="|http://192.168.126.4:8080/${#strings.setSplit(good.gimage,'|')[0]}|"></td>
                         <td th:text="${good.ginfo}">>Donec tortor diam</td>
                         <td>
                             <!-- Icons --> <a href="#" title="Edit"><img

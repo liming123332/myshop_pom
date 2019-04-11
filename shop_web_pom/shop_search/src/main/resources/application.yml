@@ -1,0 +1,9 @@
+server:
+  port: 8082
+dubbo:
+  registry:
+    address: zookeeper://192.168.126.129:2181
+  application:
+    name: shop_search
+  consumer:
+    check: false

@@ -26,13 +26,13 @@
     <div class="content-box">
         <div class="content-box-content">
             <div class="tab-content default-tab" id="tab2">
-                <form action="#" method="post">
+                <form action="/good/add" method="post">
                     <fieldset>
                         <!-- Set class to "column-left" or "column-right" on fieldsets to divide the form into columns -->
                         <p>
                             <label>商品名称</label> <input
                                 class="text-input small-input" type="text"
-                                name="small-input" />
+                                name="gname" />
                             <br />
                         </p>
                         <p>
@@ -46,6 +46,7 @@
                                                 <div id="filePicker"></div>
                                             </div>
                                         </div>
+                                        <input type="hidden" id="images" value="" name="gimage">
                                         <div class="statusBar" style="display:none;">
                                             <div class="progress">
                                                 <span class="text">0%</span>
@@ -63,19 +64,19 @@
                         <p>
                             <label>商品价格</label> <input
                                 class="text-input small-input" type="text"
-                                name="small-input" />
+                                name="gprice" />
                             <br />
                         </p>
                         <p>
                             <label>商品库存</label> <input
                                 class="text-input small-input" type="text"
-                                name="small-input" />
+                                name="gsave" />
                             <br />
                         </p>
                         <p>
                             <label>商品描述</label>
                             <textarea class="text-input textarea wysiwyg" id="textarea"
-                                      name="textfield" cols="79" rows="15"></textarea>
+                                      name="ginfo" cols="79" rows="15"></textarea>
                         </p>
                         <p>
                             <input class="mybutton" type="submit" value="Submit" />

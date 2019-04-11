@@ -167,7 +167,17 @@
             fileSizeLimit: 2000 * 1024 * 1024,    // 200 M
             fileSingleSizeLimit: 500 * 1024 * 1024    // 50 M
         });
+        uploader.on('uploadSuccess',function (file,response) {
+            //alert(response.uploadPath);
+            var val=$("#images").val()
+            if(val.length>0){
+                val+="|";
+            }
+            val+=response.uploadPath;
+            //alert(val);
+            $("#images").val(val);
 
+        })
         // 拖拽时不接受 js, txt 文件。
         uploader.on( 'dndAccept', function( items ) {
             var denied = false,

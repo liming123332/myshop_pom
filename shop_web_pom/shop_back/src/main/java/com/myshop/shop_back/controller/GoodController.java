@@ -24,4 +24,11 @@ public class GoodController {
         model.addAttribute("goods",goods);
         return "goodList";
     }
+
+    @RequestMapping("/add")
+    public String addGood(Good good){
+        good.setStatus(1);
+        goodService.insert(good);
+        return "redirect:/good/getGoodList";
+    }
 }
