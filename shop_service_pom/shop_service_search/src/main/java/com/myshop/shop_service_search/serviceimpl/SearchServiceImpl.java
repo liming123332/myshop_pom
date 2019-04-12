@@ -13,7 +13,9 @@ import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.solr.core.SolrTemplate;
+import org.springframework.data.solr.core.query.Query;
 import org.springframework.data.solr.core.query.SimpleQuery;
+import org.springframework.data.solr.core.query.result.ScoredPage;
 
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -26,6 +28,9 @@ public class SearchServiceImpl implements ISearchService {
     @Autowired
     private SolrClient solrClient;
 
+    @Autowired
+    private SolrTemplate solrTemplate;
+
     @Override
     public List<Good> searchGoods(String keyWords) {
         System.out.println(keyWords);
@@ -35,14 +40,6 @@ public class SearchServiceImpl implements ISearchService {
         }else{
             solrQuery.setQuery("gname:"+keyWords+" || "+"ginfo:"+keyWords);
         }
-//        SimpleQuery sq=null;
-//        if(null==keyWords){
-//            sq=new SimpleQuery("*:*");
-//        }else {
-//            sq = new SimpleQuery("gname:" + keyWords + " || " + "ginfo:" + keyWords);
-//        }
-//            Page<Good> query = solrTemplate.query(null, sq, Good.class);
-//            List<Good> list = query.getContent();
 
         List<Good> list=new ArrayList<>();
         try {
@@ -66,20 +63,20 @@ public class SearchServiceImpl implements ISearchService {
 
     @Override
     public int insertSolr(Good good) {
-        SolrInputDocument document=new SolrInputDocument();
-        document.setField("id", good.getId());
-        document.setField("gname", good.getGname());
-        document.setField("ginfo", good.getGinfo());
-        document.setField("gprice", good.getGprice().doubleValue());
-        document.setField("gsave", good.getGsave());
-        document.setField("gimage", good.getGimage());
-        try {
-            solrClient.add(document);
-            solrClient.commit();
-            return 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+//        SolrInputDocument document=new SolrInputDocument();
+//        document.setField("id", good.getId());
+//        document.setField("gname", good.getGname());
+//        document.setField("ginfo", good.getGinfo());
+//        document.setField("gprice", good.getGprice().doubleValue());
+//        document.setField("gsave", good.getGsave());
+//        document.setField("gimage", good.getGimage());
+//        try {
+//            solrClient.add(document);
+//            solrClient.commit();
+//            return 1;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
 
         return 0;
     }

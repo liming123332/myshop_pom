@@ -23,6 +23,12 @@ spring:
         url-pattern: /*
       #开启监控sql语句
       filters: stat,wall
+  rabbitmq:
+    host: 192.168.126.4
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /admin
 
 dubbo:
   application:
@@ -35,4 +41,5 @@ dubbo:
     check: false
 server:
   port: 9090
+
 

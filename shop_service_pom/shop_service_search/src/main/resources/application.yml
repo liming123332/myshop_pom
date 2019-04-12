@@ -12,3 +12,9 @@ spring:
   data:
     solr:
       host: http://192.168.126.4:8983/solr/ik_core
+  rabbitmq:
+    host: 192.168.126.4
+    username: admin
+    password: admin
+    virtual-host: /admin
+    port: 5672
