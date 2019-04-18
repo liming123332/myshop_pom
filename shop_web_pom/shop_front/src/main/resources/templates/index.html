@@ -3,7 +3,6 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>ShopCZ-首页</title>
-    <base th:href="|${#request.getContextPath()}/|">
     <link rel="stylesheet" href="css/base.css" type="text/css" />
     <link rel="stylesheet" href="css/shop_common.css" type="text/css" />
     <link rel="stylesheet" href="css/shop_header.css" type="text/css" />
@@ -12,6 +11,9 @@
     <script type="text/javascript" src="js/topNav.js" ></script>
     <script type="text/javascript" src="js/focus.js" ></script>
     <script type="text/javascript" src="js/shop_home_tab.js" ></script>
+    <script type="text/javascript" src="http://localhost:8084/js/islogin.js" ></script>
+    <script>
+    </script>
 </head>
 <body>
 <!-- Header  -wll-2013/03/24 -->
@@ -21,7 +23,9 @@
         <div class="shop_hd_topNav_all">
             <!-- Header TopNav Left -->
             <div class="shop_hd_topNav_all_left">
-                <p>您好，欢迎来到<b><a href="/">ShopCZ商城</a></b>[<a >登录</a>][<a >注册</a>]</p>
+                <p id="pid">
+
+                </p>
             </div>
             <!-- Header TopNav Left End -->
 
@@ -105,10 +109,10 @@
             </ul>
             <div class="clear"></div>
             <div class="search_form">
-                <form method="post" action="http://localhost:8082/search/searchList">
+                <form method="get" action="http://localhost:8082/search/searchList">
                     <div class="search_formstyle">
                         <input type="text" class="search_form_text" name="keyWords" placeholder="搜索其实很简单！" />
-                        <input type="submit" class="search_form_sub" name="secrch_submit" value="" title="搜索" />
+                        <input type="submit" class="search_form_sub" name="" value="" title="搜索" />
                     </div>
                 </form>
             </div>

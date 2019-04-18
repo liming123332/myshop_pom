@@ -1,0 +1,22 @@
+server:
+  port: 9094
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql:///shop
+    username: root
+    password: admin
+  rabbitmq:
+    host: 192.168.126.4
+    port: 5672
+    username: admin
+    password: admin
+    virtual-host: /admin
+
+dubbo:
+  application:
+    name: shop_service_user
+  registry:
+    address: zookeeper://192.168.126.129:2181
+  protocol:
+    port: 20882

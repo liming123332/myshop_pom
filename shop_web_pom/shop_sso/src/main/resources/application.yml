@@ -1,0 +1,20 @@
+server:
+  port: 8084
+dubbo:
+  application:
+    name: shop_sso
+  registry:
+    address: zookeeper://192.168.126.129:2181
+  consumer:
+    check: false
+spring:
+  redis:
+    host: 192.168.126.129
+    port: 6379
+    password: root
+  rabbitmq:
+    host: 192.168.126.4
+    username: admin
+    password: admin
+    virtual-host: /admin
+    port: 5672

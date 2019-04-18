@@ -573,6 +573,7 @@
         <div class="shop_goods_show_right">
             <ul>
                 <li>
+                    <input type="hidden" id="gid" th:value="${good.id}"/>
                     <strong style="font-size:14px; font-weight:bold;" th:text="${good.gname}">联想 K900 3G手机（炫酷银）WCDMA/GSM</strong>
                 </li>
                 <li>
@@ -597,11 +598,19 @@
                 </li>
                 <li style="padding:20px 0;">
                     <label>&nbsp;</label>
-                    <span><a  class="goods_sub goods_sub_gou" >加入购物车</a></span>
+                    <span><a href="javascript:addcart()" class="goods_sub goods_sub_gou" >加入购物车</a></span>
                 </li>
             </ul>
         </div>
     </div>
+    
+    <script>
+        function addcart() {
+            var id=$("#gid").val();
+            var gnumber=$("#good_nums").val();
+            location.href="http://localhost:8085/cart/add?gid="+id+"&gnumber="+gnumber;
+        }
+    </script>
     <!-- 商品展示 End -->
 
     <div class="clear mt15"></div>
