@@ -9,5 +9,9 @@ public interface ICartService {
 
     public int addCart(String cartToken, ShopCart shopCart,User user);
 
-    public List<ShopCart> getList(String cart_token,User user);
+    public List<ShopCart> getList(String cartToken,User user);
+
+    public void mergeCarts(String cartToken,User user);
+
+    void deletCartByUid(int id);
 }

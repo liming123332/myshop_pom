@@ -19,3 +19,6 @@ spring:
     password: root
 server:
   port: 9095
+
+mybatis-plus:
+  mapper-locations: classpath:mapper/*.xml

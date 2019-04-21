@@ -1,5 +1,6 @@
 package com.myshop.entity;
 
+import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -18,4 +19,7 @@ public class ShopCart implements Serializable {
     private int uid;
     private int gnumber;
     private BigDecimal allprice;
+
+    @TableField(exist = false)
+    private Good good;
 }

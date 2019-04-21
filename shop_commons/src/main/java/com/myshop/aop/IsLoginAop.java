@@ -68,12 +68,13 @@ public class IsLoginAop {
                 return "redirect:http://localhost:8084/sso/toLogin?returnUrl=" + returnUrl;
             }
         }
-        //System.out.println(user);
+        System.out.println(user);
         Object[] args = joinPoint.getArgs();
         //System.out.println(args);
         for (int i = 0; i <args.length ; i++) {
             if(args[i] != null && args[i].getClass() == User.class){
                 args[i] = user;
+                System.out.println(args[i]);
                 break;
             }
         }
